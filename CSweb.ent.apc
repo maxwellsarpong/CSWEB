@@ -1,0 +1,1409 @@
+﻿PROC GLOBAL
+
+//GPS
+function string getLatLng()
+		string latlng;
+		gps(open); // on Android
+		gps(open,3,4800); // on a laptop or Windows tablet; COM3, 4800 baud
+		if gps(read,10) then // a successful attempt at a read, for up to five seconds
+			errmsg("Latitude is %f, longitude is %f",gps(latitude),gps(longitude));
+			latlng= maketext("%f,%f",gps(latitude),gps(longitude) );
+		else
+			latlng= "NULL";
+			errmsg("GPS signal could not be acquired");
+		endif;
+		
+		getLatLng = latlng;
+		gps(close);
+	end
+	
+function numeric getIntLength(numeric num)
+		getIntLength = length(maketext("%d", num));
+	end;
+	
+	function string integerToString(numeric num1)
+		integerToString = maketext("%d", num1);
+	end;
+
+
+
+PROC CSWEB_FF
+
+PROC LOCALITY
+
+postproc
+		if REGION = 1 and LOCALITY = 1 then
+		    setvalueset(MARKET_NAME, MARKET_NAME_VS1);
+
+        elseif REGION = 1 and LOCALITY = 2  then 
+			       setvalueset(MARKET_NAME, MARKET_NAME_VS2)
+				   
+		elseif REGION = 2 and LOCALITY = 1  then 
+			       setvalueset(MARKET_NAME, MARKET_NAME_VS3)
+				   	   
+		elseif REGION = 2 and LOCALITY = 2  then 
+			       setvalueset(MARKET_NAME, MARKET_NAME_VS4)
+		endif
+				   
+		    //MARKET_CODE = 1701101;
+			//setvalueset(MARKET_NAME, MARKET_NAME_VS1);
+			
+	   { elseif REGION = 1 and LOCALITY = 2  then 
+			       setvalueset(MARKET_NAME, MARKET_NAME_VS2);
+				    {if MARKET_NAME_VS2 = 1 then
+			            MARKET_CODE = 1701202;
+				    endif}
+			
+		endif}
+
+    
+PROC MARKET_CODE
+
+preproc
+
+     if (REGION = 1 and LOCALITY = 1) and MARKET_NAME =111  then
+	    MARKET_CODE = 1701101;
+	elseif (REGION = 1 and LOCALITY = 2) and MARKET_NAME =121  then
+	    MARKET_CODE = 1701102;	
+     elseif (REGION = 1 and LOCALITY = 2) and MARKET_NAME =122  then
+	    MARKET_CODE = 1701103;	
+	elseif (REGION = 2 and LOCALITY = 2) and MARKET_NAME =123  then
+	    MARKET_CODE = 1701104;
+	elseif (REGION = 1 and LOCALITY = 2) and MARKET_NAME =124  then
+	    MARKET_CODE = 1701105;
+    elseif (REGION = 2 and LOCALITY = 1) and MARKET_NAME =211  then
+	    MARKET_CODE = 1702101;	
+    elseif (REGION = 2 and LOCALITY = 2) and MARKET_NAME =221  then
+	    MARKET_CODE = 1702102;			
+	elseif (REGION = 2 and LOCALITY = 2) and MARKET_NAME =222  then
+	    MARKET_CODE = 1702102;	
+	elseif (REGION = 2 and LOCALITY = 2) and MARKET_NAME =223  then
+	    MARKET_CODE = 1702101;	
+	endif
+	
+	
+Proc CONTACT_NUMBER
+
+
+PostProc
+
+
+
+if(getIntLength(CONTACT_NUMBER) <> 9) then
+		errmsg("Market code must be 10 digits!!!");
+		reenter;
+	endif;
+PROC CC2NOM 
+	
+postproc
+		if CC2NOM = 1 then
+			COICOP02 = "1";
+			setvalueset(CC3NOM, CC3NOM_VS1);
+			
+		elseif CC2NOM = 2 then
+			COICOP02 = "2";
+			setvalueset(CC3NOM, CC3NOM_VS2);
+			
+		elseif CC2NOM = 3 then
+			COICOP02 = "3";
+			setvalueset(CC3NOM, CC3NOM_VS3);
+			
+		elseif CC2NOM = 4 then
+			COICOP02 = "4";
+			setvalueset(CC3NOM, CC3NOM_VS4);
+		
+		elseif CC2NOM = 5 then
+			COICOP02 = "5";
+			setvalueset(CC3NOM, CC3NOM_VS5);
+			
+		elseif CC2NOM = 6 then
+			COICOP02 = "6";
+			setvalueset(CC3NOM, CC3NOM_VS6);
+			
+		elseif CC2NOM = 7 then
+			COICOP02 = "7";
+			setvalueset(CC3NOM, CC3NOM_VS7);
+			
+		elseif CC2NOM = 8 then
+			COICOP02 = "8";
+			setvalueset(CC3NOM, CC3NOM_VS8);
+			
+		elseif CC2NOM = 9 then
+			COICOP02 = "9";
+			setvalueset(CC3NOM, CC3NOM_VS9);
+			
+		elseif CC2NOM = 10 then
+			COICOP02 = "10";
+			setvalueset(CC3NOM, CC3NOM_VS10);
+			
+		elseif CC2NOM = 11 then
+			COICOP02 = "11";
+			setvalueset(CC3NOM, CC3NOM_VS11);
+			
+		elseif CC2NOM = 12 then
+			COICOP02 = "12";
+			setvalueset(CC3NOM, CC3NOM_VS12);
+			
+		elseif CC2NOM = 13 then
+			COICOP02 = "13";
+			setvalueset(CC3NOM, CC3NOM_VS13);
+					
+		endif
+
+
+PROC CC3NOM
+	
+PROC COICOP03
+	
+preproc
+		if CC2NOM = 1 and CC3NOM = 1 then
+			COICOP03 = "01.1";
+			setvalueset(CC4NOM, CC4NOM_VS1_1);
+		elseif CC2NOM = 1 and CC3NOM = 2 then
+			COICOP03 = "01.2";
+			setvalueset(CC4NOM, CC4NOM_VS1_2);
+			
+		elseif CC2NOM = 2 and CC3NOM = 1 then
+			COICOP03 = "02.1";
+			setvalueset(CC4NOM, CC4NOM_VS2_1);
+		elseif CC2NOM = 2 and CC3NOM = 3 then
+			COICOP03 = "02.3";
+			setvalueset(CC4NOM, CC4NOM_VS2_3);	
+		elseif CC2NOM = 2 and CC3NOM = 4 then
+			COICOP03 = "02.4";
+			setvalueset(CC4NOM, CC4NOM_VS2_4);
+			
+		elseif CC2NOM = 3 and CC3NOM = 1 then
+			COICOP03 = "03.1";
+			setvalueset(CC4NOM, CC4NOM_VS3_1);	
+		elseif CC2NOM = 3 and CC3NOM = 2 then
+			COICOP03 = "03.2";
+			setvalueset(CC4NOM, CC4NOM_VS3_2);
+			
+		elseif CC2NOM = 4 and CC3NOM = 1 then
+			COICOP03 = "04.1";
+			setvalueset(CC4NOM, CC4NOM_VS4_1);	
+		elseif CC2NOM = 4 and CC3NOM = 3 then
+			COICOP03 = "04.3";
+			setvalueset(CC4NOM, CC4NOM_VS4_3);	
+		elseif CC2NOM = 4 and CC3NOM = 4 then
+			COICOP03 = "04.4";
+			setvalueset(CC4NOM, CC4NOM_VS4_4);	
+		elseif CC2NOM = 4 and CC3NOM = 5 then
+			COICOP03 = "04.5";
+			setvalueset(CC4NOM, CC4NOM_VS4_5);			
+
+		elseif CC2NOM = 5 and CC3NOM = 2 then
+			COICOP03 = "05.2";
+			setvalueset(CC4NOM, CC4NOM_VS5_2);
+		elseif CC2NOM = 5 and CC3NOM = 3 then
+			COICOP03 = "05.3";
+			setvalueset(CC4NOM, CC4NOM_VS5_3);
+		elseif CC2NOM = 5 and CC3NOM = 4 then
+			COICOP03 = "05.4";
+			setvalueset(CC4NOM, CC4NOM_VS5_5);
+		elseif CC2NOM = 5 and CC3NOM = 5 then
+			COICOP03 = "05.5";
+			setvalueset(CC4NOM, CC4NOM_VS5_5);
+		elseif CC2NOM = 5 and CC3NOM = 6 then
+			COICOP03 = "05.6";
+			setvalueset(CC4NOM, CC4NOM_VS5_6);
+
+
+		elseif CC2NOM = 6 and CC3NOM = 1 then
+			COICOP03 = "06.1";
+			setvalueset(CC4NOM, CC4NOM_VS6_1);
+		elseif CC2NOM = 6 and CC3NOM = 2 then
+			COICOP03 = "6.2";
+			setvalueset(CC4NOM, CC4NOM_VS6_2);
+		elseif CC2NOM = 6 and CC3NOM = 3then
+			COICOP03 = "06.3";
+			setvalueset(CC4NOM, CC4NOM_VS6_3);
+
+		elseif CC2NOM = 6 and CC3NOM = 4then
+			COICOP03 = "06.4";
+			setvalueset(CC4NOM, CC4NOM_VS6_4);
+
+		elseif CC2NOM = 7 and CC3NOM = 1 then
+			COICOP03 = "07.1";
+			setvalueset(CC4NOM, CC4NOM_VS7_1);
+		elseif CC2NOM = 7 and CC3NOM = 2 then
+			COICOP03 = "07.2";
+			setvalueset(CC4NOM, CC4NOM_VS7_2);
+		elseif CC2NOM = 7 and CC3NOM = 3 then
+			COICOP03 = "07.3";
+			setvalueset(CC4NOM, CC4NOM_VS7_3);
+			
+	   elseif CC2NOM = 7 and CC3NOM = 4 then
+			COICOP03 = "07.4";
+			setvalueset(CC4NOM, CC4NOM_VS7_4);
+
+		elseif CC2NOM = 8 and CC3NOM = 1 then
+			COICOP03 = "08.1";
+			setvalueset(CC4NOM, CC4NOM_VS8_1);
+			
+		elseif CC2NOM = 8 and CC3NOM = 3 then
+			COICOP03 = "08.3";
+			setvalueset(CC4NOM, CC4NOM_VS8_3);
+			
+
+
+		elseif CC2NOM = 9 and CC3NOM = 2 then
+			COICOP03 = "09.2";
+			setvalueset(CC4NOM, CC4NOM_VS9_2);
+		elseif CC2NOM = 9 and CC3NOM = 3 then
+			COICOP03 = "09.3";
+			setvalueset(CC4NOM, CC4NOM_VS9_3);
+		elseif CC2NOM = 9 and CC3NOM = 4 then
+			COICOP03 = "09.4";
+			setvalueset(CC4NOM, CC4NOM_VS9_4);
+		elseif CC2NOM = 9 and CC3NOM = 6 then
+			COICOP03 = "09.6";
+			setvalueset(CC4NOM, CC4NOM_VS9_6);
+		elseif CC2NOM = 9 and CC3NOM = 7 then
+			COICOP03 = "09.7";
+			setvalueset(CC4NOM, CC4NOM_VS9_7);
+
+		elseif CC2NOM = 10 and CC3NOM = 1 then
+			COICOP03 = "10.1";
+			setvalueset(CC4NOM, CC4NOM_VS10_1);
+		elseif CC2NOM = 10 and CC3NOM = 2 then
+			COICOP03 = "10.2";
+			setvalueset(CC4NOM, CC4NOM_VS10_2);
+		elseif CC2NOM = 10 and CC3NOM = 3 then
+			COICOP03 = "10.3";
+			setvalueset(CC4NOM, CC4NOM_VS10_3);
+		elseif CC2NOM = 10 and CC3NOM = 4 then
+			COICOP03 = "10.4";
+			setvalueset(CC4NOM, CC4NOM_VS10_4);
+		elseif CC2NOM = 10 and CC3NOM = 5 then
+			COICOP03 = "10.5";
+			setvalueset(CC4NOM, CC4NOM_VS10_5);
+
+
+		elseif CC2NOM = 11 and CC3NOM = 1 then
+			COICOP03 = "11.1";
+			setvalueset(CC4NOM, CC4NOM_VS11_1);
+		elseif CC2NOM = 11 and CC3NOM = 2 then
+			COICOP03 = "11.2";
+			setvalueset(CC4NOM, CC4NOM_VS11_2);
+
+		elseif CC2NOM = 12 and CC3NOM = 1 then
+			COICOP03 = "12.1";
+			setvalueset(CC4NOM, CC4NOM_VS12_1);
+			
+		elseif CC2NOM = 12 and CC3NOM = 2 then
+			COICOP03 = "12.2";
+			setvalueset(CC4NOM, CC4NOM_VS12_2);
+
+		elseif CC2NOM = 13 and CC3NOM = 1 then
+			COICOP03 = "13.1";
+			setvalueset(CC4NOM, CC4NOM_VS13_1);
+		elseif CC2NOM = 5 and CC3NOM = 2 then
+			COICOP03 = "13.2";
+			setvalueset(CC4NOM, CC4NOM_VS5_6);
+		elseif CC2NOM = 5 and CC3NOM = 9 then
+			COICOP03 = "13.9";
+			setvalueset(CC4NOM, CC4NOM_VS5_6);
+
+
+		endif
+
+
+PROC CC4NOM
+
+
+PROC COICOP04
+	
+	
+preproc
+		if COICOP03 = "01.1" and CC4NOM = 1 then
+			COICOP04 = "01.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_1);			
+		elseif COICOP03 = "01.1" and CC4NOM = 2 then
+			COICOP04 = "01.1.2";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_2);			
+		elseif COICOP03 = "01.1" and CC4NOM = 3 then
+			COICOP04 = "01.1.3";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_3);			
+		elseif COICOP03 = "01.1" and CC4NOM = 4 then
+			COICOP04 = "01.1.4";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_4);			
+		elseif COICOP03 = "01.1" and CC4NOM = 5 then
+			COICOP04 = "01.1.5";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_5);			
+		elseif COICOP03 = "01.1" and CC4NOM = 6 then
+			COICOP04 = "01.1.6";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_6);			
+		elseif COICOP03 = "01.1" and CC4NOM = 7 then
+			COICOP04 = "01.1.7";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_7);			
+		elseif COICOP03 = "01.1" and CC4NOM = 8 then
+			COICOP04 = "01.1.8";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_8);			
+		elseif COICOP03 = "01.1" and CC4NOM = 9 then
+			COICOP04 = "01.1.9";
+			setvalueset(CC5NOM, CC5NOM_VS1_1_9);
+		endif;
+			
+		if COICOP03 = "01.2" and CC4NOM = 1 then
+			COICOP04 = "01.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		elseif COICOP03 = "01.2" and CC4NOM = 2 then
+			COICOP04 = "01.2.2";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		elseif COICOP03 = "01.2" and CC4NOM = 3 then
+			COICOP04 = "01.2.3";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		elseif COICOP03 = "01.2" and CC4NOM = 4 then
+			COICOP04 = "01.2.4";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		elseif COICOP03 = "01.2" and CC4NOM = 5 then
+			COICOP04 = "01.2.5";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		elseif COICOP03 = "01.2" and CC4NOM = 6 then
+			COICOP04 = "01.2.6";
+			setvalueset(CC5NOM, CC5NOM_VS1_2_1);			
+		endif;
+
+
+		if COICOP03 = "02.1" and CC4NOM = 1 then
+			COICOP04 = "02.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS2_1_1);			
+		elseif COICOP03 = "02.1" and CC4NOM = 2 then
+			COICOP04 = "02.1.2";
+			setvalueset(CC5NOM, CC5NOM_VS2_1_2);			
+		elseif COICOP03 = "02.1" and CC4NOM = 3 then
+			COICOP04 = "02.1.3";
+			setvalueset(CC5NOM, CC5NOM_VS2_1_3);			
+		elseif COICOP03 = "02.1" and CC4NOM = 9 then
+			COICOP04 = "02.1.9";;			
+		endif;
+
+		if COICOP03 = "02.3" and CC4NOM = 0 then
+			COICOP04 = "02.3.0";
+			setvalueset(CC5NOM, CC5NOM_VS2_3_0);
+		endif;
+
+		if COICOP03 = "02.4" and CC4NOM = 1 then
+			COICOP04 = "02.4.0";
+			setvalueset(CC5NOM, CC5NOM_VS2_4_0);
+		endif;
+		
+		
+		if COICOP03 = "03.1" and CC4NOM = 1 then
+			COICOP04 = "03.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS3_1_1);			
+		elseif COICOP03 = "03.1" and CC4NOM = 2 then
+			COICOP04 = "03.1.2";
+			setvalueset(CC5NOM, CC5NOM_VS3_1_2);			
+		elseif COICOP03 = "03.1" and CC4NOM = 3 then
+			COICOP04 = "03.1.3";			
+			setvalueset(CC5NOM, CC5NOM_VS3_1_3);			
+		elseif COICOP03 = "03.1" and CC4NOM = 4 then
+			COICOP04 = "03.1.4";			
+			setvalueset(CC5NOM, CC5NOM_VS3_1_4);			
+		endif;
+		
+		if COICOP03 = "03.2" and CC4NOM = 1 then
+			COICOP04 = "03.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS3_2_1);			
+		endif;
+		
+		
+		if COICOP03 = "04.1" and CC4NOM = 1 then
+			COICOP04 = "04.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS4_1_1);			
+		endif;
+		
+		if COICOP03 = "04.3" and CC4NOM = 1 then
+			COICOP04 = "04.3.1";
+			setvalueset(CC5NOM, CC5NOM_VS4_3_1);			
+		elseif COICOP03 = "04.3" and CC4NOM = 2 then
+			COICOP04 = "04.3.2";			
+		endif;
+		
+		if COICOP03 = "04.4" and CC4NOM = 1 then
+			COICOP04 = "04.4.1";
+			setvalueset(CC5NOM, CC5NOM_VS4_4_1);			
+		elseif COICOP03 = "04.4" and CC4NOM = 2 then
+			COICOP04 = "04.4.2";
+			setvalueset(CC5NOM, CC5NOM_VS4_4_2);			
+		elseif COICOP03 = "04.4" and CC4NOM = 3 then
+			COICOP04 = "04.4.3";
+			setvalueset(CC5NOM, CC5NOM_VS4_4_3);			
+		endif;
+		
+		if COICOP03 = "04.5" and CC4NOM = 1 then
+			COICOP04 = "04.5.1";
+			setvalueset(CC5NOM, CC5NOM_VS4_5_1);			
+		elseif COICOP03 = "04.5" and CC4NOM = 2 then
+			COICOP04 = "04.5.2";
+			setvalueset(CC5NOM, CC5NOM_VS4_5_2);			
+		elseif COICOP03 = "04.5" and CC4NOM = 3 then
+			COICOP04 = "04.5.3";
+			setvalueset(CC5NOM, CC5NOM_VS4_5_3);			
+		elseif COICOP03 = "04.5" and CC4NOM = 4 then
+			COICOP04 = "04.5.4";
+			setvalueset(CC5NOM, CC5NOM_VS4_5_4);			
+		endif;
+		
+			
+		if COICOP03 = "05.1" and CC4NOM = 1 then
+			COICOP04 = "05.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_1_1);			
+		elseif COICOP03 = "05.1" and CC4NOM = 2 then
+			COICOP04 = "05.1.2";
+			setvalueset(CC5NOM, CC5NOM_VS5_1_2);			
+		endif;
+		
+		if COICOP03 = "05.2" and CC4NOM = 1 then
+			COICOP04 = "05.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_2_1);			
+		endif;	
+			
+		if COICOP03 = "05.3" and CC4NOM = 1 then
+			COICOP04 = "05.3.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_3_1);			
+		elseif COICOP03 = "05.3" and CC4NOM = 2 then
+			COICOP04 = "05.3.2";			
+			setvalueset(CC5NOM, CC5NOM_VS5_3_2);
+		endif;
+			
+		if COICOP03 = "05.4" and CC4NOM = 0 then
+			COICOP04 = "05.4.0";			
+			setvalueset(CC5NOM, CC5NOM_VS5_4_0);
+		endif;
+		
+		if COICOP03 = "05.5" and CC4NOM = 1 then
+			COICOP04 = "05.5.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_5_1);			
+		elseif COICOP03 = "05.5" and CC4NOM = 2 then
+			COICOP04 = "05.5.2";			
+			setvalueset(CC5NOM, CC5NOM_VS5_5_2);
+		endif;
+		
+		if COICOP03 = "05.6" and CC4NOM = 1 then
+			COICOP04 = "05.6.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_6_1);			
+		elseif COICOP03 = "05.6" and CC4NOM = 2 then
+			COICOP04 = "05.6.2";			
+			setvalueset(CC5NOM, CC5NOM_VS5_6_2);
+		endif;
+		
+		
+		if COICOP03 = "06.1" and CC4NOM = 1 then
+			COICOP04 = "06.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS6_1_1);			
+		elseif COICOP03 = "06.1" and CC4NOM = 2 then
+			COICOP04 = "06.1.2";			
+			setvalueset(CC5NOM, CC5NOM_VS6_1_2);			
+		elseif COICOP03 = "06.3" and CC4NOM = 3 then
+			COICOP04 = "06.1.3";			
+			setvalueset(CC5NOM, CC5NOM_VS6_1_3);
+		endif;
+				
+		if COICOP03 = "06.2" and CC4NOM = 2 then
+			COICOP04 = "06.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS5_6_1);			
+		elseif COICOP03 = "06.2" and CC4NOM = 3 then
+			COICOP04 = "06.2.3";			
+			setvalueset(CC5NOM, CC5NOM_VS6_2_3);
+		endif;
+
+		if COICOP03 = "06.3" and CC4NOM = 1 then
+			COICOP04 = "06.3.1";
+			setvalueset(CC5NOM, CC5NOM_VS6_3_1);			
+		endif;		
+		
+		if COICOP03 = "06.4" and CC4NOM = 1 then
+			COICOP04 = "06.4.1";
+			setvalueset(CC5NOM, CC5NOM_VS6_4_1);			
+		endif;
+		
+		
+		if COICOP03 = "07.1" and CC4NOM = 1 then
+			COICOP04 = "07.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS7_1_1);			
+		elseif COICOP03 = "07.1" and CC4NOM = 2 then
+			COICOP04 = "07.1.2";			
+			setvalueset(CC5NOM, CC5NOM_VS7_1_2);			
+		elseif COICOP03 = "07.3" and CC4NOM = 3 then
+			COICOP04 = "07.1.3";			
+			setvalueset(CC5NOM, CC5NOM_VS7_1_3);
+		endif;
+
+		if COICOP03 = "07.2" and CC4NOM = 1 then
+			COICOP04 = "07.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS7_2_1);			
+		elseif COICOP03 = "07.2" and CC4NOM = 2 then
+			COICOP04 = "07.2.2";			
+			setvalueset(CC5NOM, CC5NOM_VS7_2_2);			
+		elseif COICOP03 = "07.2" and CC4NOM = 3 then
+			COICOP04 = "07.2.3";			
+			setvalueset(CC5NOM, CC5NOM_VS7_2_3);						
+		elseif COICOP03 = "07.2" and CC4NOM = 4 then
+			COICOP04 = "07.2.4";			
+			setvalueset(CC5NOM, CC5NOM_VS7_2_4);
+		endif;
+		
+		if COICOP03 = "07.3" and CC4NOM = 2 then
+			COICOP04 = "07.3.2";			
+			setvalueset(CC5NOM, CC5NOM_VS7_3_2);			
+		elseif COICOP03 = "07.3" and CC4NOM = 3 then
+			COICOP04 = "07.3.3";			
+			setvalueset(CC5NOM, CC5NOM_VS7_3_3);						
+		elseif COICOP03 = "07.3" and CC4NOM = 4 then
+			COICOP04 = "07.3.4";			
+			setvalueset(CC5NOM, CC5NOM_VS7_3_4);
+		endif;		
+
+		if COICOP03 = "07.4" and CC4NOM = 1 then
+			COICOP04 = "07.4.1";
+			setvalueset(CC5NOM, CC5NOM_VS7_4_1);			
+		endif;		
+
+
+		if COICOP03 = "08.1" and CC4NOM = 1 then
+			COICOP04 = "08.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS8_1_1);			
+		elseif COICOP03 = "08.1" and CC4NOM = 2 then
+			COICOP04 = "08.1.2";			
+			setvalueset(CC5NOM, CC5NOM_VS8_1_2);			
+		elseif COICOP03 = "08.1" and CC4NOM = 3 then
+			COICOP04 = "08.1.3";			
+			setvalueset(CC5NOM, CC5NOM_VS8_1_3);						
+		elseif COICOP03 = "08.1" and CC4NOM = 4 then
+			COICOP04 = "08.1.4";			
+			setvalueset(CC5NOM, CC5NOM_VS8_1_4);
+		endif;
+			
+		if COICOP03 = "08.3" and CC4NOM = 2 then
+			COICOP04 = "08.3.2";			
+			setvalueset(CC5NOM, CC5NOM_VS8_3_2);			
+		elseif COICOP03 = "08.3" and CC4NOM = 3 then
+			COICOP04 = "08.3.3";			
+			setvalueset(CC5NOM, CC5NOM_VS8_3_3);						
+		elseif COICOP03 = "08.3" and CC4NOM = 5 then
+			COICOP04 = "08.3.5";			
+			setvalueset(CC5NOM, CC5NOM_VS8_3_5);
+		endif;
+		
+		
+		if COICOP03 = "09.2" and CC4NOM = 2 then
+			COICOP04 = "09.2.2";
+			setvalueset(CC5NOM, CC5NOM_VS9_2_2);			
+		endif;
+		
+		
+
+		if COICOP03 = "09.3" and CC4NOM = 1 then
+			COICOP04 = "09.3.1";
+			setvalueset(CC5NOM, CC5NOM_VS9_3_1);			
+		elseif COICOP03 = "09.3" and CC4NOM = 2 then
+			COICOP04 = "09.3.2";			
+			setvalueset(CC5NOM, CC5NOM_VS9_3_2);			
+		endif;		
+		
+		if COICOP03 = "09.4" and CC4NOM = 6 then
+			COICOP04 = "09.4.6";
+			setvalueset(CC5NOM, CC5NOM_VS9_4_6);			
+		endif;
+		
+		if COICOP03 = "09.6" and CC4NOM = 1 then
+			COICOP04 = "09.6.1";
+			setvalueset(CC5NOM, CC5NOM_VS9_6_1);			
+		endif;
+		
+		if COICOP03 = "09.7" and CC4NOM = 1 then
+			COICOP04 = "09.7.1";
+			setvalueset(CC5NOM, CC5NOM_VS9_7_1);			
+		elseif COICOP03 = "09.7" and CC4NOM = 2 then
+			COICOP04 = "09.7.2";			
+			setvalueset(CC5NOM, CC5NOM_VS9_7_2);			
+		elseif COICOP03 = "09.7" and CC4NOM = 4 then
+			COICOP04 = "09.7.4";			
+			setvalueset(CC5NOM, CC5NOM_VS9_7_4);			
+		endif;		
+		
+		
+		if COICOP03 = "10.1" and CC4NOM = 0 then
+			COICOP04 = "10.1.0";
+			setvalueset(CC5NOM, CC5NOM_VS10_1_0);			
+		endif;
+		
+		if COICOP03 = "10.2" and CC4NOM = 0 then
+			COICOP04 = "10.2.0";
+			setvalueset(CC5NOM, CC5NOM_VS10_2_0);			
+		endif;
+		
+		if COICOP03 = "10.3" and CC4NOM = 0 then
+			COICOP04 = "10.3.0";
+			setvalueset(CC5NOM, CC5NOM_VS10_3_0);			
+		endif;
+		
+		if COICOP03 = "10.4" and CC4NOM = 0 then
+			COICOP04 = "10.4.0";
+			setvalueset(CC5NOM, CC5NOM_VS10_4_0);			
+		endif;
+		
+		if COICOP03 = "10.5" and CC4NOM = 0 then
+			COICOP04 = "10.5.0";
+			setvalueset(CC5NOM, CC5NOM_VS10_5_0);			
+		endif;
+		
+		
+		if COICOP03 = "11.1" and CC4NOM = 1 then
+			COICOP04 = "11.1.0";
+			setvalueset(CC5NOM, CC5NOM_VS11_1_1);			
+		endif;
+		
+		if COICOP03 = "11.2" and CC4NOM = 0 then
+			COICOP04 = "11.2.0";
+			setvalueset(CC5NOM, CC5NOM_VS11_2_0);			
+		endif;
+		
+		
+		if COICOP03 = "12.1" and CC4NOM = 1 then
+			COICOP04 = "12.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS12_1_1);			
+		elseif COICOP03 = "12.1" and CC4NOM = 2 then
+			COICOP04 = "12.1.2";			
+			setvalueset(CC5NOM, CC5NOM_VS12_1_2);			
+		elseif COICOP03 = "12.1" and CC4NOM = 4 then
+			COICOP04 = "12.1.4";			
+			setvalueset(CC5NOM, CC5NOM_VS12_1_4);			
+		endif;		
+
+		if COICOP03 = "12.2" and CC4NOM = 9 then
+			COICOP04 = "12.2.9";
+			setvalueset(CC5NOM, CC5NOM_VS12_2_9);			
+		endif;
+		
+
+		if COICOP03 = "13.1" and CC4NOM = 1 then
+			COICOP04 = "13.1.1";
+			setvalueset(CC5NOM, CC5NOM_VS13_1_1);			
+		elseif COICOP03 = "13.1" and CC4NOM = 2 then
+			COICOP04 = "13.1.2";			
+			setvalueset(CC5NOM, CC5NOM_VS13_1_2);			
+		elseif COICOP03 = "13.1" and CC4NOM = 3 then
+			COICOP04 = "13.1.3";			
+			setvalueset(CC5NOM, CC5NOM_VS13_1_3);			
+		endif;		
+
+		if COICOP03 = "13.2" and CC4NOM = 1 then
+			COICOP04 = "13.2.1";
+			setvalueset(CC5NOM, CC5NOM_VS13_2_1);			
+		elseif COICOP03 = "13.2" and CC4NOM = 2 then
+			COICOP04 = "13.2.2";			
+			setvalueset(CC5NOM, CC5NOM_VS13_2_2);			
+		elseif COICOP03 = "13.2" and CC4NOM = 9 then
+			COICOP04 = "13.2.9";			
+			setvalueset(CC5NOM, CC5NOM_VS13_2_9);			
+		endif;		
+
+		if COICOP03 = "13.9" and CC4NOM = 0 then
+			COICOP04 = "13.9.1";
+			setvalueset(CC5NOM, CC5NOM_VS13_9_0);			
+		endif
+		
+		
+		
+		
+PROC COICOP05
+
+preproc
+if COICOP04 = "01.1.1" and CC5NOM = 1 then
+			COICOP05 = "01.1.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_1_1);
+		elseif COICOP04 = "01.1.1" and CC5NOM = 2 then
+			COICOP05 = "01.1.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_1_2);
+		elseif COICOP04 = "01.1.1" and CC5NOM = 3 then
+			COICOP05 = "01.1.1.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_1_3);
+		elseif COICOP04 = "01.1.1" and CC5NOM = 4 then
+			COICOP05 = "01.1.1.4";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_1_4);
+		elseif COICOP04 = "01.1.1" and CC5NOM = 5 then
+			COICOP05 = "01.1.1.5";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_1_5);		
+		endif;
+
+		//01.1.2.x	
+		if COICOP04 = "01.1.2" and CC5NOM = 1 then
+			COICOP05 = "01.1.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_2_1);
+		elseif COICOP04 = "01.1.2" and CC5NOM = 2 then
+			COICOP05 = "01.1.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_2_2);
+		elseif COICOP04 = "01.1.2" and CC5NOM = 3 then
+			COICOP05 = "01.1.2.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_2_3);
+		elseif COICOP04 = "01.1.2" and CC5NOM = 5 then
+			COICOP05 = "01.1.2.5";					
+			setvalueset(CC6NOM, CC6NOM_VS1_1_2_5);
+		endif;
+		
+		//01.1.3.x	
+		if COICOP04 = "01.1.3" and CC5NOM = 1 then
+			COICOP05 = "01.1.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_3_1);
+		elseif COICOP04 = "01.1.3" and CC5NOM = 2 then
+			COICOP05 = "01.1.3.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_3_2);
+		elseif COICOP04 = "01.1.3" and CC5NOM = 3 then
+			COICOP05 = "01.1.3.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_3_3);
+		elseif COICOP04 = "01.1.3" and CC5NOM = 4 then
+			COICOP05 = "01.1.3.4";					
+			setvalueset(CC6NOM, CC6NOM_VS1_1_3_4);
+		endif;
+		
+		
+		//01.1.4.x	
+		if COICOP04 = "01.1.4" and CC5NOM = 3 then
+			COICOP05 = "01.1.4.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_4_3);
+		elseif COICOP04 = "01.1.4" and CC5NOM = 6 then
+			COICOP05 = "01.1.4.6";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_4_6);
+		elseif COICOP04 = "01.1.4" and CC5NOM = 8 then
+			COICOP05 = "01.1.4.8";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_4_8);			
+		endif;
+
+		//01.1.5.x	
+		if COICOP04 = "01.1.5" and CC5NOM = 1 then
+			COICOP05 = "01.1.5.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_5_1);
+		elseif COICOP04 = "01.1.5" and CC5NOM = 3 then
+			COICOP05 = "01.1.5.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_5_3);			
+		endif;
+		
+		// 01.1.6.x
+		if COICOP04 = "01.1.6" and CC5NOM = 1 then
+			COICOP05 = "01.1.6.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_6_1);
+		elseif COICOP04 = "01.1.6" and CC5NOM = 2 then
+			COICOP05 = "01.1.6.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_6_2);
+		elseif COICOP04 = "01.1.1" and CC5NOM = 3 then
+			COICOP05 = "01.1.6.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_6_3);
+		elseif COICOP04 = "01.1.6" and CC5NOM = 5 then
+			COICOP05 = "01.1.6.5";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_6_5);
+		elseif COICOP04 = "01.1.6" and CC5NOM = 8 then
+			COICOP05 = "01.1.6.8";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_6_8);
+		endif;
+		
+		// 01.1.7.x
+		if COICOP04 = "01.1.7" and CC5NOM = 1 then
+			COICOP05 = "01.1.7.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_1);
+		elseif COICOP04 = "01.1.7" and CC5NOM = 2 then
+			COICOP05 = "01.1.7.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_2);
+		elseif COICOP04 = "01.1.7" and CC5NOM = 3 then
+			COICOP05 = "01.1.7.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_3);
+		elseif COICOP04 = "01.1.7" and CC5NOM = 4 then
+			COICOP05 = "01.1.7.4";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_4);
+		elseif COICOP04 = "01.1.7" and CC5NOM = 5 then
+			COICOP05 = "01.1.7.5";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_5);
+		elseif COICOP04 = "01.1.7" and CC5NOM = 9 then
+			COICOP05 = "01.1.7.9";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_9);
+		endif;
+		
+		// 01.1.8.x
+		if COICOP04 = "01.1.8" and CC5NOM = 1 then
+			COICOP05 = "01.1.7.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_1);
+		elseif COICOP04 = "01.1.8" and CC5NOM = 3 then
+			COICOP05 = "01.1.7.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_3);
+		elseif COICOP04 = "01.1.8" and CC5NOM = 4 then
+			COICOP05 = "01.1.7.4";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_4);
+		elseif COICOP04 = "01.1.8" and CC5NOM = 5 then
+			COICOP05 = "01.1.7.5";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_5);
+		elseif COICOP04 = "01.1.8" and CC5NOM = 9 then
+			COICOP05 = "01.1.7.9";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_7_9);
+		endif;
+		
+		// 01.1.9.x
+		if COICOP04 = "01.1.9" and CC5NOM = 1 then
+			COICOP05 = "01.1.9.1";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_9_1);
+		elseif COICOP04 = "01.1.9" and CC5NOM = 2 then
+			COICOP05 = "01.1.9.2";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_9_3);
+		elseif COICOP04 = "01.1.9" and CC5NOM = 3 then
+			COICOP05 = "01.1.9.3";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_9_3);
+		elseif COICOP04 = "01.1.9" and CC5NOM = 4 then
+			COICOP05 = "01.1.9.4";
+			setvalueset(CC6NOM, CC6NOM_VS1_1_9_4);
+		endif;
+		
+		// 01.2.1.x
+		if COICOP04 = "01.2.1" and CC5NOM = 0 then
+			COICOP05 = "01.2.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_1_0);
+		endif;
+		
+		// 01.2.2.x
+		if COICOP04 = "01.2.2" and CC5NOM = 0 then
+			COICOP05 = "01.2.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_2_0);
+		endif;
+		
+		// 01.2.3.x
+		if COICOP04 = "01.2.3" and CC5NOM = 0 then
+			COICOP05 = "01.2.3.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_3_0);
+		endif;
+		
+		// 01.2.4.x
+		if COICOP04 = "01.2.4" and CC5NOM = 0 then
+			COICOP05 = "01.2.4.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_4_0);
+		endif;
+		
+		// 01.2.5.x
+		if COICOP04 = "01.2.5" and CC5NOM = 0 then
+			COICOP05 = "01.2.5.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_5_0);
+		endif;
+		
+		// 01.2.6.x
+		if COICOP04 = "01.2.6" and CC5NOM = 0 then
+			COICOP05 = "01.2.6.0";
+			setvalueset(CC6NOM, CC6NOM_VS1_2_6_0);
+		endif;
+		
+		// 02.1.1.x
+		if COICOP04 = "02.1.1" and CC5NOM = 0 then
+			COICOP05 = "02.1.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS2_1_1_0);
+		endif;
+		
+		// 02.1.2.x
+		if COICOP04 = "02.1.2" and CC5NOM = 1 then
+			COICOP05 = "02.1.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS2_1_2_1);
+		endif;
+		
+		// 02.1.3.x
+		if COICOP04 = "02.1.3" and CC5NOM = 0 then
+			COICOP05 = "02.1.3.0";
+			setvalueset(CC6NOM, CC6NOM_VS2_1_3_0);
+		endif;
+		
+		// 02.1.9.x
+		if COICOP04 = "02.1.9" and CC5NOM = 0 then
+			COICOP05 = "02.1.9.0";
+			setvalueset(CC6NOM, CC6NOM_VS2_1_9_0);
+		endif;
+				
+		// 02.3.0.x
+		if COICOP04 = "02.3.0" and CC5NOM = 1 then
+			COICOP05 = "02.3.0.1";
+			setvalueset(CC6NOM, CC6NOM_VS2_3_0_1);
+		endif;
+		
+		// 02.4.0.x
+		if COICOP04 = "02.4.0" and CC5NOM = 0 then
+			COICOP05 = "02.4.0.0";
+			setvalueset(CC6NOM, CC6NOM_VS2_4_0_0);
+		endif;
+		
+		// 03.1.1.x
+		if COICOP04 = "03.1.1" and CC5NOM = 0 then
+			COICOP05 = "03.1.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_1_0);
+		endif;
+
+		// 03.1.2.x
+		if COICOP04 = "03.1.2" and CC5NOM = 1 then
+			COICOP05 = "03.1.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_2_1);
+		elseif COICOP04 = "03.1.2" and CC5NOM = 2 then
+			COICOP05 = "03.1.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_2_2);
+		elseif COICOP04 = "03.1.2" and CC5NOM = 3 then
+			COICOP05 = "03.1.2.3";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_2_3);
+		elseif COICOP04 = "03.1.2" and CC5NOM = 4 then
+			COICOP05 = "03.1.2.4";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_2_4);
+		endif;
+
+		// 03.1.3.x
+		if COICOP04 = "03.1.3" and CC5NOM = 1 then
+			COICOP05 = "03.1.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_3_1);
+		endif;
+
+		// 03.1.4.x
+		if COICOP04 = "03.1.4" and CC5NOM = 1 then
+			COICOP05 = "03.1.4.1";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_4_1);
+		elseif COICOP04 = "03.1.4" and CC5NOM = 2 then
+			COICOP05 = "03.1.4.2";
+			setvalueset(CC6NOM, CC6NOM_VS3_1_4_2);
+		endif;
+
+		// 03.2.1.x
+		if COICOP04 = "03.2.1" and CC5NOM = 1 then
+			COICOP05 = "03.2.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS3_2_1_1);
+		elseif COICOP04 = "03.2.1" and CC5NOM = 2 then
+			COICOP05 = "03.2.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS3_2_1_2);
+		elseif COICOP04 = "03.2.1" and CC5NOM = 3 then
+			COICOP05 = "03.2.1.3";
+			setvalueset(CC6NOM, CC6NOM_VS3_2_1_3);
+		endif;
+		
+		// 03.2.2.x
+		if COICOP04 = "03.2.2" and CC5NOM = 0 then
+			COICOP05 = "03.2.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS3_2_2_0);
+		endif;
+		
+		// 04.1.1.x
+		if COICOP04 = "04.1.1" and CC5NOM = 0 then
+			COICOP05 = "04.1.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS4_1_1_0);
+		endif;
+		
+		// 04.3.1.x
+		if COICOP04 = "04.3.1" and CC5NOM = 1 then
+			COICOP05 = "04.3.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS4_3_1_1);
+		endif;
+		
+		// 04.3.2.x
+		if COICOP04 = "04.3.2" and CC5NOM = 0 then
+			COICOP05 = "04.3.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS4_3_2_0);
+		endif;		
+
+		// 04.4.1.x
+		if COICOP04 = "04.4.1" and CC5NOM = 1 then
+			COICOP05 = "04.4.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS4_4_1_1);
+		elseif COICOP04 = "04.4.1" and CC5NOM = 2 then
+			COICOP05 = "04.4.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS4_4_1_2);
+		endif;
+		
+		// 04.4.2.x
+		if COICOP04 = "04.4.2" and CC5NOM = 0 then
+			COICOP05 = "04.4.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS4_4_2_0);
+		endif;		
+
+		// 04.4.3.x
+		if COICOP04 = "04.4.3" and CC5NOM = 1 then
+			COICOP05 = "04.4.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS4_4_3_1);
+		elseif COICOP04 = "04.4.3" and CC5NOM = 2 then
+			COICOP05 = "04.4.3.2";
+			setvalueset(CC6NOM, CC6NOM_VS4_4_3_2);
+		endif;
+
+
+		// 05.5.2.x
+		if COICOP04 = "05.5.2" and CC5NOM = 1 then
+			COICOP05 = "05.5.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS5_5_2_1);
+		elseif COICOP04 = "05.5.2" and CC5NOM = 2 then
+			COICOP05 = "05.5.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS5_5_2_2);
+		endif;
+		
+		// 05.6.1.x
+		if COICOP04 = "05.6.1" and CC5NOM = 1 then
+			COICOP05 = "05.6.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS5_6_1_1);
+		elseif COICOP04 = "05.6.1" and CC5NOM = 9 then
+			COICOP05 = "05.6.1.9";
+			setvalueset(CC6NOM, CC6NOM_VS5_6_1_9);
+		endif;		
+		
+		// 05.6.2.x
+		if COICOP04 = "05.6.2" and CC5NOM = 1 then
+			COICOP05 = "05.6.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS5_6_2_1);
+		endif;		
+		
+		// 06.1.1.x
+		if COICOP04 = "06.1.1" and CC5NOM = 1 then
+			COICOP05 = "06.1.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS6_1_1_1);
+		elseif COICOP04 = "06.1.1" and CC5NOM = 2 then
+			COICOP05 = "06.1.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS6_1_1_2);
+		endif;
+		
+		// 06.1.2.x
+		if COICOP04 = "06.1.2" and CC5NOM = 1 then
+			COICOP05 = "06.1.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS6_1_2_1);
+		elseif COICOP04 = "06.1.2" and CC5NOM = 2 then
+			COICOP05 = "06.1.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS6_1_2_2);
+		endif;
+		
+		// 06.1.3.x
+		if COICOP04 = "06.1.3" and CC5NOM = 1 then
+			COICOP05 = "06.1.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS6_1_3_1);
+		endif;
+		
+		// 06.2.2.x
+		if COICOP04 = "06.2.2" and CC5NOM = 1 then
+			COICOP05 = "06.2.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS6_2_2_1);
+		endif;
+		
+		// 06.2.3.x
+		if COICOP04 = "06.2.3" and CC5NOM = 1 then
+			COICOP05 = "06.2.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS6_2_3_1);
+		endif;
+		
+		// 06.3.1.x
+		if COICOP04 = "06.3.1" and CC5NOM = 0 then
+			COICOP05 = "06.3.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS6_3_1_0);
+		endif;
+		
+		// 06.4.1.x
+		if COICOP04 = "06.4.1" and CC5NOM = 0 then
+			COICOP05 = "06.4.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS6_4_1_0);
+		endif;
+		
+		
+		// 07.1.1.x
+		if COICOP04 = "07.1.1" and CC5NOM = 1 then
+			COICOP05 = "07.1.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_1_1_1);
+		elseif COICOP04 = "07.1.1" and CC5NOM = 2 then
+			COICOP05 = "07.1.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_1_1_2);
+		endif;
+		
+		// 07.1.2.x
+		if COICOP04 = "07.1.2" and CC5NOM = 0 then
+			COICOP05 = "07.1.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS7_1_2_0);
+		endif;
+		
+		// 07.1.3.x
+		if COICOP04 = "07.1.3" and CC5NOM = 0 then
+			COICOP05 = "07.1.3.0";
+			setvalueset(CC6NOM, CC6NOM_VS7_1_3_0);
+		endif;
+		
+		// 07.2.1.x
+		if COICOP04 = "07.2.1" and CC5NOM = 1 then
+			COICOP05 = "07.2.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_1_1);
+		elseif COICOP04 = "07.2.1" and CC5NOM = 2 then
+			COICOP05 = "07.2.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_1_2);
+		endif;
+		
+		// 07.2.2.x
+		if COICOP04 = "07.2.2" and CC5NOM = 1 then
+			COICOP05 = "07.2.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_2_1);
+		elseif COICOP04 = "07.2.2" and CC5NOM = 2 then
+			COICOP05 = "07.2.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_2_2);
+		elseif COICOP04 = "07.2.2" and CC5NOM = 4 then
+			COICOP05 = "07.2.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_2_4);
+		endif;
+		
+		// 07.2.3.x
+		if COICOP04 = "07.2.3" and CC5NOM = 0 then
+			COICOP05 = "07.2.3.0";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_3_0);
+		endif;
+		
+		// 07.2.4.x
+		if COICOP04 = "07.2.4" and CC5NOM = 3 then
+			COICOP05 = "07.2.4.3";
+			setvalueset(CC6NOM, CC6NOM_VS7_2_4_3);
+		endif;
+		
+		// 07.3.2.x
+		if COICOP04 = "07.3.2" and CC5NOM = 1 then
+			COICOP05 = "07.3.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_3_2_1);
+		elseif COICOP04 = "07.3.2" and CC5NOM = 2 then
+			COICOP05 = "07.3.2.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_3_2_2);
+		endif;
+		
+		// 07.3.3.x
+		if COICOP04 = "07.3.3" and CC5NOM = 1 then
+			COICOP05 = "07.3.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_3_3_1);
+		endif;
+		
+		// 07.3.4.x
+		if COICOP04 = "07.3.4" and CC5NOM = 0 then
+			COICOP05 = "07.3.4.0";
+			setvalueset(CC6NOM, CC6NOM_VS7_3_4_0);
+		endif;
+		
+		// 07.4.1.x
+		if COICOP04 = "07.4.1" and CC5NOM = 1 then
+			COICOP05 = "07.4.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS7_4_1_1);
+		elseif COICOP04 = "07.4.1" and CC5NOM = 2 then
+			COICOP05 = "07.4.1.2";
+			setvalueset(CC6NOM, CC6NOM_VS7_4_1_2);
+		endif;
+				
+		// 08.1.1.x
+		if COICOP04 = "08.1.1" and CC5NOM = 0 then
+			COICOP05 = "08.1.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_1_1_0);
+		endif;
+				
+		// 08.1.2.x
+		if COICOP04 = "08.1.2" and CC5NOM = 0 then
+			COICOP05 = "08.1.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_1_2_0);
+		endif;
+		
+		// 08.1.3.x
+		if COICOP04 = "08.1.3" and CC5NOM = 1 then
+			COICOP05 = "08.1.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS8_1_3_1);
+		elseif COICOP04 = "08.1.3" and CC5NOM = 2 then
+			COICOP05 = "08.1.3.2";
+			setvalueset(CC6NOM, CC6NOM_VS8_1_3_2);
+		endif;
+				
+		// 08.1.4.x
+		if COICOP04 = "08.1.4" and CC5NOM = 0 then
+			COICOP05 = "08.1.4.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_1_4_0);
+		endif;
+		
+		// 08.3.2.x
+		if COICOP04 = "08.3.2" and CC5NOM = 0 then
+			COICOP05 = "08.3.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_3_2_0);
+		endif;
+		
+		// 08.3.3.x
+       if COICOP04 = "08.3.3" and CC5NOM = 0 then
+			COICOP05 = "08.3.3.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_3_3_0);
+		endif;		
+		
+		// 08.3.5.x
+		if COICOP04 = "08.3.5" and CC5NOM = 0 then
+			COICOP05 = "08.3.5.0";
+			setvalueset(CC6NOM, CC6NOM_VS8_3_5_0);
+		endif;
+						
+		// 09.4.6.x
+		if COICOP04 = "09.4.6" and CC5NOM = 3 then
+			COICOP05 = "09.4.6.3";
+			setvalueset(CC6NOM, CC6NOM_VS9_4_6_3);
+		endif;
+				
+		// 09.6.1.x
+		if COICOP04 = "09.6.1" and CC5NOM = 0 then
+			COICOP05 = "09.6.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS9_6_1_0);
+		endif;
+		
+		// 09.7.1.x
+		if COICOP04 = "09.7.1" and CC5NOM = 1 then
+			COICOP05 = "09.7.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS9_7_1_1);
+		endif;
+		
+		// 09.7.2.x
+		if COICOP04 = "09.7.2" and CC5NOM = 1 then
+			COICOP05 = "09.7.2.1";
+			setvalueset(CC6NOM, CC6NOM_VS9_7_2_1);
+		endif;
+		
+		// 09.7.4.x
+		if COICOP04 = "09.7.4" and CC5NOM = 0 then
+			COICOP05 = "09.7.4.0";
+			setvalueset(CC6NOM, CC6NOM_VS9_7_4_0);
+		endif;
+		
+		// 10.1.0.x
+		if COICOP04 = "10.1.0" and CC5NOM = 2 then
+			COICOP05 = "10.1.0.2";
+			setvalueset(CC6NOM, CC6NOM_VS10_1_0_2);
+		endif;
+		
+		// 10.2.0.x
+		if COICOP04 = "10.2.0" and CC5NOM = 0 then
+			COICOP05 = "10.2.0.0";
+			setvalueset(CC6NOM, CC6NOM_VS10_2_0_0);
+		endif;
+		
+		// 10.3.0.x
+		if COICOP04 = "10.3.0" and CC5NOM = 0 then
+			COICOP05 = "10.3.0.0";
+			setvalueset(CC6NOM, CC6NOM_VS10_3_0_0);
+		endif;
+		
+		// 10.4.0.x
+		if COICOP04 = "10.4.0" and CC5NOM = 0 then
+			COICOP05 = "10.4.0.0";
+			setvalueset(CC6NOM, CC6NOM_VS10_4_0_0);
+		endif;
+		
+		// 10.5.0.x
+		if COICOP04 = "10.5.0" and CC5NOM = 9 then
+			COICOP05 = "10.5.0.9";
+			setvalueset(CC6NOM, CC6NOM_VS10_5_0_9);
+		endif;
+		
+		// 11.1.1.x
+		if COICOP04 = "11.1.1" and CC5NOM = 1 then
+			COICOP05 = "11.1.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS11_1_1_1);
+		endif;
+		
+{		// 11.2.0.x
+		if COICOP04 = "11.2.0" and CC5NOM = 1 then
+			COICOP05 = "11.2.0.1";
+			setvalueset(CC6NOM, CC6NOM_VS11_2_0_1);
+}		
+		if COICOP04 = "11.2.0" and CC5NOM = 3 then
+			COICOP05 = "11.2.0.3";
+			setvalueset(CC6NOM, CC6NOM_VS11_2_0_3);
+		endif; 
+		
+		// 12.1.1.x
+		if COICOP04 = "12.1.1" and CC5NOM = 0 then
+			COICOP05 = "12.1.1.0";
+			setvalueset(CC6NOM, CC6NOM_VS12_1_1_0);
+		endif;
+		
+		// 12.1.2.x
+		if COICOP04 = "12.1.2" and CC5NOM = 0 then
+			COICOP05 = "12.1.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS12_1_2_0);
+		endif;
+		
+		// 12.1.4.x
+		if COICOP04 = "12.1.4" and CC5NOM = 0 then
+			COICOP05 = "12.1.4.1";
+			setvalueset(CC6NOM, CC6NOM_VS12_1_4_0);
+		endif;
+		
+		// 12.2.9.x
+		if COICOP04 = "12.2.9" and CC5NOM = 9 then
+			COICOP05 = "12.2.9.9";
+			setvalueset(CC6NOM, CC6NOM_VS12_2_9_9);
+		endif;
+		
+		// 13.1.1.x
+		if COICOP04 = "13.1.1" and CC5NOM = 1 then
+			COICOP05 = "13.1.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS13_1_1_1);
+		endif;
+
+		// 13.1.2.x
+		if COICOP04 = "13.1.2" and CC5NOM = 0 then
+			COICOP05 = "13.1.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS13_1_2_0);
+		endif;
+		
+		// 13.1.3.x
+		if COICOP04 = "13.1.3" and CC5NOM = 1 then
+			COICOP05 = "13.1.3.1";
+			setvalueset(CC6NOM, CC6NOM_VS13_1_3_1);
+		endif;
+		
+		// 13.2.1.x
+		if COICOP04 = "13.2.1" and CC5NOM = 1 then
+			COICOP05 = "13.2.1.1";
+			setvalueset(CC6NOM, CC6NOM_VS13_2_1_1);
+		endif;
+		
+		// 13.2.2.x
+		if COICOP04 = "13.2.2" and CC5NOM = 0 then
+			COICOP05 = "13.2.2.0";
+			setvalueset(CC6NOM, CC6NOM_VS13_2_2_0);
+		endif;
+
+		// 13.2.9.x
+		if COICOP04 = "13.2.9" and CC5NOM = 1 then
+			COICOP05 = "13.2.9.1";
+			setvalueset(CC6NOM, CC6NOM_VS13_2_9_1);
+		endif;
+		
+		// 13.9.0.x
+		if COICOP04 = "13.9.0" and CC5NOM = 9 then
+			COICOP05 = "13.9.0.9";
+			setvalueset(CC6NOM, CC6NOM_VS13_9_0_9);
+		endif;
+
+PROC COICOP06
+
+preproc
+COICOP06  =  maketext("%8s.%1d", COICOP05,CC6NOM);
+PROC PRICE
+
+postproc
+
+  if PRICE = 0 or PRICE < 0 then
+     errmsg("Price should not be less than 0");
+	 reenter;
+  endif
+PROC QUANTITY
+
+postproc
+
+  if QUANTITY <= 0 then
+     errmsg("Price should not be less than 0");
+	 reenter;
+  endif
+  
+ 
+PROC USER_ID
+	
+preproc
+	
+	USER_ID = getoperatorid();
+	
+PROC TIME
+
+	
+preproc
+	TIME = timestring(timestamp());
+PROC GPS_LOC
+
+Preproc
+   GPS_LOC = getLatLng()
+		
+

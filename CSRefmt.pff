@@ -1,0 +1,14 @@
+﻿[Run Information]
+Version=CSPro 7.3
+AppType=Reformat
+
+[Files]
+InputData=.\jjj.csdb
+OutputData=.\jjja.csdb
+InputDict=.\CSweb.dcf
+OutputDict=.\CSweb.dcf
+Listing=.\CSRefmt.lst
+
+[Parameters]
+ViewListing=Always
+ViewResults=No

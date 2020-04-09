@@ -1,0 +1,208 @@
+﻿[CAPI QUESTIONS]
+Version=CSPro 7.3
+
+[LANGUAGES]
+ENG=English
+
+[QUESTION]
+Field=CSWEB_DICT.BRAND
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Brand\cf1 ?\par
+ENG=\i This provides the brand of the item.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CC2NOM
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 CC2NOM\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CC3NOM
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 CC3NOM\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CC4NOM
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 CC4NOM\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CC5NOM
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 CC5NOM\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CC6NOM
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 CC6NOM\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.CONTACT_NUMBER
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Contact number\cf1 ?\par
+ENG=\i This provides the contact number of the dealer.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.GPS_LOC
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red255\green0\blue0;\red0\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 GPS \cf2 of the location.\cf1\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.ID
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 Questionnaire \cf2 ID\cf1 .\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.IMP_LOCAL
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 Is it \cf2 Imported or Local\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.ITEM_DESCRIPTION
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Item Description\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.LOCALITY
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Locality?\par
+ENG=\cf1\i This provides the locality you are in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.LOCATION
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is their \cf2 Location\cf1 ?\i\par
+ENG=This provides the location you are in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.MARKET_CODE
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Market Code\cf1 ?\par
+ENG=\i This provides the market code you are in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.MARKET_NAME
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Market Name\cf1 ?\par
+ENG=\i This provides the name of the market you in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.OUTLET_NAME
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 Please input the \cf2 Outlet Name\cf1 .\par
+ENG=\i This provides the outlet name you are in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.OUTLET_TYPE
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Outlet Type\cf1\par
+ENG=\i This provides the outlet type you are in.\i0\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.PRICE
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Price\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.QUANTITY
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 How many \cf2 Quantity\cf1  of the Item?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.REGION
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Region?\par
+ENG=\cf1\i This provides the region you are in.\i0\fs24\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.TIME
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red255\green0\blue0;\red0\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 Time \cf2 of the data\cf1 .\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.UNIT_OF_MEASURE
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 What is the \cf2 Unit of Measurement\cf1 ?\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.UNIT_OF_MEASUREMENT
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red0\green0\blue0;\red255\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs44 What is the \cf2 unit of measurement\cf1 ?\par
+ENG=\i\fs36 State whether it is measured in kg or g.\i0\fs24\par
+ENG=}
+
+[QUESTION]
+Field=CSWEB_DICT.USER_ID
+ENG={\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+ENG={\colortbl ;\red255\green0\blue0;\red0\green0\blue0;}
+ENG={\*\generator Riched20 10.0.18362}\viewkind4\uc1
+ENG=\pard\cf1\fs36 User ID\cf2\par
+ENG=}
+

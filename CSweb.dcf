@@ -1,0 +1,2137 @@
+﻿[Dictionary]
+Version=CSPro 7.3
+Label=CSweb
+Name=CSWEB_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+
+[Level]
+Label=CSweb questionnaire
+Name=CSWEB_QUEST
+
+[IdItems]
+
+[Item]
+Label=ID
+Name=ID
+Start=2
+Len=8
+
+[Record]
+Label=Intro
+Name=CS_ID
+RecordTypeValue='1'
+RecordLen=12
+
+[Item]
+Label=Region
+Name=REGION
+Start=10
+Len=1
+
+[ValueSet]
+Label=Region
+Name=REGION_VS1
+Value=1;Western Region
+Value=2;Central Region
+
+[Item]
+Label=Locality
+Name=LOCALITY
+Start=11
+Len=2
+
+[ValueSet]
+Label=Locality
+Name=LOCALITY_VS1
+Value=1;Urban
+Value=2;Rural
+
+[Record]
+Label=Market
+Name=MARKET
+RecordTypeValue='2'
+RecordLen=629
+
+[Item]
+Label=Outlet_Name
+Name=OUTLET_NAME
+Start=10
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Market_Code
+Name=MARKET_CODE
+Start=210
+Len=7
+
+[Item]
+Label=Outlet_Type
+Name=OUTLET_TYPE
+Start=217
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Contact_Number
+Name=CONTACT_NUMBER
+Start=417
+Len=10
+ZeroFill=Yes
+
+[Item]
+Label=Location
+Name=LOCATION
+Start=427
+Len=200
+DataType=Alpha
+
+[Item]
+Label=MARKET_NAME
+Name=MARKET_NAME
+Start=627
+Len=3
+
+[ValueSet]
+Label=MARKET_NAME
+Name=MARKET_NAME_VS1
+Value=111;Takoradi
+
+[ValueSet]
+Label=MARKET_NAME
+Name=MARKET_NAME_VS2
+Value=121;Akontombra
+Value=122;Half Asini
+Value=123;Sefwi Bekwai
+Value=124;Amenfi
+
+[ValueSet]
+Label=MARKET_NAME
+Name=MARKET_NAME_VS3
+Value=211;Cape Coast
+
+[ValueSet]
+Label=MARKET_NAME
+Name=MARKET_NAME_VS4
+Value=221;Mankessim
+Value=222;Nyankomasi
+Value=223;Bawjiase
+
+[Record]
+Label=Items
+Name=ITEMS
+RecordTypeValue='3'
+RecordLen=49
+
+[Item]
+Label=CC2nom
+Name=CC2NOM
+Start=10
+Len=2
+
+[ValueSet]
+Label=CC2nom
+Name=CC2NOM_VS1
+Value=1;Food and Non-Alcoholic Beverages
+Value=2;Alcoholics Beverages, Tobacco and Narcotics
+Value=3;Clothing and Footwear
+Value=4;Housing, Water, Electricity, Gas and other Fuels
+Value=5;Furnishings, Household equipments and Routine Household Maintenance
+Value=6;Health
+Value=7;Transport
+Value=8;Information and Communication
+Value=9;Recreation, Sport and Culture
+Value=10;Education Services
+Value=11; Restaurant and Accomodation services
+Value=12;Insurance and Financial Services
+Value=13;Personal care, Social protection and Miscellaneous goods and services
+
+[Item]
+Label=Coicop02
+Name=COICOP02
+Start=12
+Len=2
+DataType=Alpha
+
+[Item]
+Label=CC3nom
+Name=CC3NOM
+Start=14
+Len=2
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS1
+Value=1;Food
+Value=2;Non-Alcoholic Beverage
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS2
+Value=1;Alcoholic Beverages
+Value=3;Tobacco
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS3
+Value=1;Clothing
+Value=2;Footwear
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS4
+Value=1;Actual rentals for housing
+Value=2;Electricity, gas and other fuels
+Value=3;Maintenance, repair and security of the dwelling
+Value=4;Water supply and miscellaneous services relating to the dwelling
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS5
+Value=1;Furniture, furnishings and loose carpets
+Value=2;Household textiles
+Value=3;Household appliances
+Value=4;Glassware, tableware, and household utensils
+Value=5;Tools and equipment for house and garden
+Value=6;Goods and services for routine maintenance
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS6
+Value=1;Medicines and health product
+Value=2;Outpatient care services
+Value=3;Other health services
+Value=4;Inpatient care services
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS7
+Value=1;Purchase of vehicles
+Value=2;Operation of personal transport equipment
+Value=3;Passenger transport services
+Value=4;Transport services of goods
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS8
+Value=1;Information and communication equipment
+Value=3;Information and communication services
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS9
+Value=1;Other recreational goods
+Value=2;Garden products and pets
+Value=3;Recreational services
+Value=4;Cultural services
+Value=5;Newspapers, books and stationery
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS10
+Value=1;Early childhood and primary education
+Value=2;Secondary education
+Value=3;Tertiary education
+Value=4;Education not defined by level
+Value=5;Post-secondary non-teriary education
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS11
+Value=1;Food and beverage serving services
+Value=2;Accomodation services
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS12
+Value=1;Insurance
+Value=2;Financial services
+
+[ValueSet]
+Label=CC3nom
+Name=CC3NOM_VS13
+Value=1;Personal care
+Value=2;Other personal effects
+Value=3;Other services
+
+[Item]
+Label=Coicop03
+Name=COICOP03
+Start=16
+Len=4
+DataType=Alpha
+
+[Item]
+Label=CC4nom
+Name=CC4NOM
+Start=20
+Len=2
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS1_1
+Value=1;Cereals and cereal product
+Value=2;Live animals, meat and other parts of slaughtered land animals
+Value=3;Fish and other sea food
+Value=4;Milk, other diary products and eggs
+Value=5;Oil and fats
+Value=6;Fruits and nuts
+Value=7;Vegetables, tubers, plantains, cooking bananas and pulses
+Value=8;Sugar, confectionery and desserts
+Value=9;Ready-made food and other food products
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS1_2
+Value=1;Fruit and vegetable juices
+Value=2;Coffee and coffee substitutes
+Value=3;Tea, mate and other plant products for infusion
+Value=4;Cocoa drinks
+Value=5;Water
+Value=6;Soft Drinks
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS2_1
+Value=1;Spirit and liquors
+Value=2;Wine
+Value=3;Beer
+Value=9;Other Alchoholic Beverages
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS2_3
+Value=1;Tobacco
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS2_4
+Value=1;Narcotics
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS3_1
+Value=1;Clothing materials
+Value=2;Garments
+Value=3;Other articles of clothing and clothing accessories
+Value=4;Cleaning, repair, tailoring and hire of clothing
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS3_2
+Value=1;Shoes and other footwear
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS4_1
+Value=1;Actual rentals paid by tenants for main residence
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS4_3
+Value=1;Materials for the maintenance and repair of the dwelling
+Value=2;Services for the maintenance, repair and security of the dwelling
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS4_4
+Value=1;Water supply
+Value=2;Refuse collection
+Value=3;Sewage collection
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_1
+Value=1;Furniture, furnishings and loose carpets
+Value=2;Repaire, installation and hire of furniture, furnishings
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_2
+Value=1;Household textiles
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_3
+Value=1;Major household appliances, whether electric or not
+Value=2;Small household appliances
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_4
+Value=1;Glassware, tableware and household utensils
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_5
+Value=2;Non-motorised tools and miscellaneous accessories
+Value=1;Motorized tools and equipment
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS5_6
+Value=1;Non-durable household goods
+Value=2;Domestic services and household services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS6_1
+Value=1;Medicines
+Value=2;Medical Products
+Value=3;Assistive Products
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS6_2
+Value=2;Outpatient Dental Services
+Value=3;Other Outpatient  care services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS6_4
+Value=1;Diagnostic imaging services and medical laboratory services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS7_1
+Value=1;Motor cars
+Value=2;Moto Cycles
+Value=3;Bycycles
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS7_2
+Value=1;Parts and Accesories for personal transport equipent
+Value=2;Fuels and lubricants for personal transport equipments
+Value=3;Maintenance and Repair for personal transport equipment
+Value=4;Other services in respect of  for personal transport equipment
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS7_3
+Value=2;Passenger transport by road
+Value=3;Passenger transport by air
+Value=4;Passenger transport by sea and inland waterway
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS7_4
+Value=1;Postal and courier services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS8_1
+Value=1;Fixed telephone equipment
+Value=2;Mobile telephone equipment
+Value=3;Information processing equipment
+Value=4;Equipment for the reception, recording and reproduction of sound and vision
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS8_3
+Value=3;Internet access provision services and net storage services
+Value=5;Repair and rental of information and communication equipment
+Value=2;Mobile Communication Services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS6_3
+Value=1;Inpatient curative and rehabilitative services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS9_2
+Value=2;Equipment for sport, camping and open-air recreation1
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS9_3
+Value=1;Garden products, plants and flowers
+Value=2;Pets and Products for pets
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS9_4
+Value=6;Recreational and sporting services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS9_6
+Value=1;Services provided by cinemas, theatres and concert venues
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS9_7
+Value=1;Books
+Value=2;Newspapers and Periodicals
+Value=4;Stationary and Drawing Materials
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS10_1
+Value=0;Early childhood and primary education
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS10_2
+Value=1;Secondary Education
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS10_3
+Value=0;Post-Secondary and Non-Tertiary Education
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS10_4
+Value=0;Tertiary Education
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS10_5
+Value=0;Education not Defined by Label
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS11_1
+Value=1;Restaurants, cafes and the like
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS11_2
+Value=0;Accomodation Services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS12_1
+Value=1;Life and Accident Insurance
+Value=2;Insurance Connected with Health
+Value=4;Insurance connected with transport
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS12_2
+Value=9;Other Financial Services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS13_1
+Value=1;Electric Appliance for personal care
+Value=2;Other appliances, articles and products for personal care
+Value=3;Hairdressing salons and personal grooming establishments
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS13_2
+Value=1;Jewellery and watches
+Value=2;Devotional articles and articles for religious and ritual celebrations
+Value=9;Other personal effects n.e.c.
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS13_9
+Value=1;Other services
+
+[ValueSet]
+Label=CC4nom
+Name=CC4NOM_VS4_5
+Value=1;Electricity
+Value=2;Gass
+Value=3;Liquids Fuels
+Value=4;Solid Fuels
+
+[Item]
+Label=Coicop04
+Name=COICOP04
+Start=22
+Len=6
+DataType=Alpha
+
+[Item]
+Label=CC5nom
+Name=CC5NOM
+Start=28
+Len=2
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_1
+Value=1;Ceareal
+Value=2;Flour of Cereal
+Value=3;Bakery and Bakery Products
+Value=4;Breakfast Cereals
+Value=5;Macaroni, noodles, couscous and similar pasta products
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_3
+Value=1;Fish, live, fresh, chilled or frozen
+Value=2;Fish, dried, salted, in brine or smoked
+Value=3;Fish preparations
+Value=4;Other seafood, live, fresh, chilled or frozen
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_2
+Value=1;Live land animals
+Value=2;Meat, fresh, chilled or frozen
+Value=3;Meat, dried, salted, in brine or smoked
+Value=5;Meat, offal, blood and other parts of slaughtered animals' preparations
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_4
+Value=3;Other milk and cream
+Value=6;Yoghurt and similar products
+Value=8;Eggs
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_5
+Value=1;Vegetable oils
+Value=3;Margarine and similar preparations
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_6
+Value=1;Dates, figs and tropical fruits, fresh
+Value=2;Citrus fruits, fresh
+Value=3;Stone fruits and pome fruits, fresh
+Value=5;Other fruits, fresh
+Value=8;Nuts, in shell or shelled
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_7
+Value=1;Leafy or stem vegetables, fresh or chilled
+Value=2;Fruit-bearing vegetables, fresh or chilled
+Value=3;Green leguminous vegetables, fresh or chilled
+Value=4;Other vegetables, fresh or chilled
+Value=5;Tubers, plantains and cooking bananas
+Value=9;Vegetables, tubers and other preparations
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_8
+Value=1;Cane and beet sugar
+Value=3;Jams, fruit jellies, marmalades, fruit purÃ©e and pastes, honey
+Value=4;Nut puree, nut butter and nut pastes
+Value=5;Chocolate, cocoa, and cocoa-based food products
+Value=9;Other sugar confectionery and desserts n.e.c.
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_1_9
+Value=1;Ready-made food
+Value=2;Baby food
+Value=3;Salt, condiments and sauces
+Value=4;Spices, culinary herbs and seeds
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_2_1
+Value=0;Fruit and vegetable juices
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_V1_2_2
+Value=0;Coffee and coffee substitutes
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_2_3
+Value=0;Tea, matÃ© and other plant products for infusion
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_2_4
+Value=0;Cocoa drinks
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_2_5
+Value=0;Water
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS1_2_6
+Value=0;Soft drinks
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_1_1
+Value=0;Spirits and liquors
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_1_2
+Value=1;Wine from grapes
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_1_3
+Value=0;Beer
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_1_9
+Value=0;Other alcoholic beverages
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_3_0
+Value=1;Cigarettes
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS2_4_0
+Value=0;Narcotics
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_1_1
+Value=0;Clothing materials
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_1_2
+Value=1;Garments for men or boys
+Value=2;Garments for women or girls
+Value=3;Garments for infants (0 to under 2 years)
+Value=4;School uniforms
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_1_3
+Value=1;Other articles of clothing
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_1_4
+Value=1;Cleaning of clothing
+Value=2;Repair, tailoring and hire of clothing
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_2_1
+Value=1;Footwear for men
+Value=2;Footwear for women
+Value=3;Footwear for infants and children
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS3_2_2
+Value=0;Cleaning, repair, and hire of footwear
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_1_1
+Value=0;Actual rentals paid by tenants for main residence
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_3_1
+Value=1;Materials for the maintenance and repair of the dwelling
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_3_2
+Value=0;Services for the maintenance, repair and security of the dwelling
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_4_1
+Value=1;Water supply through network systems
+Value=2;Water supply through other systems
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_4_2
+Value=0;Refuse collection
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_4_3
+Value=1;Sewage collection through sewer systems
+Value=2;Sewage collection through onsite sanitation systems
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_5_1
+Value=0;Electricity
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_5_2
+Value=2;Liquefied hydrocarbons
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_5_3
+Value=0;Liquid fuels
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS4_5_4
+Value=2;Wood fuel, including pellets and briquettes
+Value=3;Charcoal
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_1_1
+Value=1;Household furniture
+Value=4;Furnishings, loose carpets and rugs
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_1_2
+Value=0;Repair, installation and hire of furniture, furnishings and loose carpets
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_2_1
+Value=2;Bed linen and bedding
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_3_1
+Value=1;Major kitchen appliances
+Value=2;Major laundry appliances
+Value=3;Heaters, air conditioners
+Value=4;Cleaning equipment
+Value=9;Other major household appliances
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_3_2
+Value=1;Small appliances for cooking and processing of food
+Value=2;Small appliances for preparing beverages
+Value=9;Other small household appliances
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_4_0
+Value=1;Glassware, crystal-ware, ceramic ware and chinaware
+Value=2;Cutlery, flatware and silverware
+Value=3;Kitchen utensils and articles
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_5_1
+Value=0;Motorized tools and equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_5_2
+Value=1;Non-motorized tools
+Value=2;Miscellaneous accessories
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_6_1
+Value=1;Household cleaning and maintenance products
+Value=9;Other non-durable household goods
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS5_6_2
+Value=1;Domestic services by paid staff
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_1_1
+Value=1;Medicines, vaccines and other pharmaceutical preparations
+Value=2;Herbal medicines and homeopathic products
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_1_2
+Value=1;Medical diagnostic products
+Value=2;Prevention and protective devices
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_1_3
+Value=1;Assistive products for vision
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_2_2
+Value=1;Dental preventive services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_2_3
+Value=1;Outpatient curative and rehabilitative services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_3_1
+Value=0;Inpatient curative and rehabilitative services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS6_4_1
+Value=0;Diagnostic imaging services and medical laboratory services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_1_1
+Value=1;New motor cars
+Value=2;Second-hand motor cars
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_1_2
+Value=0;Motorcycles
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_1_3
+Value=0;Bicycles
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_2_1
+Value=1;Tyres
+Value=2;Parts for personal transport equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_2_2
+Value=1;Diesel
+Value=2;Petrol
+Value=4;Lubricants
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_2_3
+Value=0;Maintenance and repair of personal transport equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_2_4
+Value=3;Driving lessons, tests, licences, and road worthiness tests
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_3_2
+Value=1;Passenger transport by bus and coach
+Value=2;Passenger transport by taxi and car hire
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_3_3
+Value=1;Passenger transport by air, domestic
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_3_4
+Value=0;Passenger transport by sea and inland waterway
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS7_4_1
+Value=1;Letter handling services
+Value=2;Courier and parcel delivery services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_1_1
+Value=0;Fixed telephone equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_1_2
+Value=0;Mobile telephone equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_1_3
+Value=1;Computers, laptops and tablets
+Value=2;Peripheral equipment and its consumable components
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_1_4
+Value=0;Equipment for the reception, recording and reproduction of sound and vision
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_3_2
+Value=0;Mobile communication services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_3_3
+Value=0;Internet access provision services and net storage services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS8_3_5
+Value=0;Repair and rental of information and communication equipment
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_2_2
+Value=2;Equipment for camping and open-air recreation
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_3_1
+Value=2;Plants, seeds and flowers
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_3_2
+Value=2;Products for pets and other household animals
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_4_6
+Value=3;Sporting services - attendance
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_6_1
+Value=0;Services provided by cinemas, theatres and concert venues
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_7_1
+Value=1;Educational and text books
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_7_2
+Value=1;Newspapers
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS9_7_4
+Value=0;Stationery and drawing materials
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS10_1_0
+Value=2;Primary education
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS10_2_0
+Value=0;Secondary education
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS10_3_0
+Value=0;Post-secondary non-tertiary education
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS10_4_0
+Value=0;Tertiary education
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS10_5_0
+Value=9;Other education not defined by level
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS11_1_1
+Value=1;Restaurants, cafes and the like with full service
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS11_2_0
+Value=3;Accommodation services of boarding schools, universities and other educational establishments
+Value=1;Hotels, motels, inns and similar accommodation services
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS12_1_1
+Value=0;Life and accident insurance
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS12_1_2
+Value=0;Insurance connected with health
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS12_1_4
+Value=0;Insurance connected with transport
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS12_2_9
+Value=9;Other financial services n.e.c.
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_1_1
+Value=1;Electric appliances for personal care
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_1_2
+Value=0;Other appliances, articles and products for personal care
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_1_3
+Value=1;Hairdressing
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_2_1
+Value=1;Jewellery and watches
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_2_2
+Value=0;Devotional articles and articles for religious and ritual celebrations
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_2_9
+Value=1;Travel goods and articles for babies and other personal effects n.e.c.
+
+[ValueSet]
+Label=CC5nom
+Name=CC5NOM_VS13_9_0
+Value=9;Other services n.e.c.
+
+[Item]
+Label=Coicop05
+Name=COICOP05
+Start=30
+Len=8
+DataType=Alpha
+
+[Item]
+Label=CC6nom
+Name=CC6NOM
+Start=38
+Len=2
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_1_1
+Value=2;Rice(Imported)
+Value=3;Guinea Corn/Sorghum
+Value=5;Millet
+Value=6;Maize
+Value=9;Rice(Local)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_1_2
+Value=1;Wheat Flour
+Value=6;Corn Dough/Corn Flour
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_1_3
+Value=1;Bread
+Value=9;Biscuit
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_1_4
+Value=0;Other Breakfast Cereal
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_1_5
+Value=0;Instant Noodles /Pasta
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_2_1
+Value=4;Live Poultary
+Value=9;Snail
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_2_2
+Value=1;Beef
+Value=2;Pork
+Value=3;Goat Meat
+Value=4;Chicken
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_2_3
+Value=3;Dog Meat
+Value=9;Bushmeat
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_2_5
+Value=1;Sausage
+Value=2;Corned Beef
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_3_1
+Value=1;Tilapia
+Value=2;Fish (Sea)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_3_2
+Value=1;Herrings -Smoked
+Value=2;Fish (River)
+Value=9;Dried Fish - Koobi/momoni
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_3_3
+Value=1;Tuna In Vegetable Oil
+Value=2;Mackerel In Tomato Sauce
+Value=4;Sardines In Vegetable Oil
+Value=9;Fish Fried
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_3_4
+Value=1;Shrimps
+Value=2;Crab
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_4_3
+Value=1;Evaporated Milk
+Value=2;Powdered Milk
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_4_6
+Value=0;Ice Cream
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_4_8
+Value=1;Chicken Eggs
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_5_1
+Value=1;Sunflower Cooking Oil
+Value=2;Palm Oil (Red Oil)
+Value=5;Groundnut Oil
+Value=6;Coconut Oil
+Value=9;Vegetable Oil
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_5_3
+Value=0;Margarine
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_6_1
+Value=1;Avocado Pear
+Value=2;Banana
+Value=5;Mango
+Value=6;Pawpaw
+Value=7;Pineapple
+Value=8;Coconut (Fresh)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_6_2
+Value=2;Lime
+Value=3;Oranges (Fruit)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_6_3
+Value=1;Apples (Foreign)
+Value=9;Sweet Apple
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_6_5
+Value=1;Grapes
+Value=4;Water Melon
+Value=9;Palm Fruits
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_6_8
+Value=2;Cashew
+Value=8;Groundnuts (Shelled)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_1
+Value=2;Cabbage
+Value=9;Cocoyam Leaves (Kontomire) Or Alefu
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_2
+Value=1;Green Pepper (Fresh)
+Value=3;Garden Eggs
+Value=4;Tomatoes (Fresh)
+Value=6;Okro (Fresh)
+Value=7;Dried Pepper (Red)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_3
+Value=1;Beans
+Value=2;Bambara Beans
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_4
+Value=1;Carrot
+Value=2;Garlic
+Value=3;Onions (Large)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_5
+Value=3;Cassava (Fresh)
+Value=4;Yam
+Value=6;Cocoyam
+Value=7;Plantain (Green)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_7_9
+Value=1;Cassava - Kokonte/Dough
+Value=8;Gari
+Value=9;Tomato Paste
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_8_1
+Value=1;Sugar
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_8_3
+Value=1;Honey
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_8_4
+Value=0;Sheabutter
+Value=1;Groundnuts Paste
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_8_5
+Value=1;Chocolate
+Value=3;Milo/Cocoa Powder
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_8_9
+Value=9;Chewing Gum
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_9_1
+Value=2;Kenkey With Fried Fish
+Value=3;Cooked Rice
+Value=4;Fried Plantain and Beans
+Value=6;Fufu And  Soup
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_9_2
+Value=1;Baby Milk
+Value=2;Baby Food
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_9_3
+Value=1;Iodated Salt
+Value=9;Vinegar
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_1_9_4
+Value=0;Spicies(cubes)
+Value=1;Ginger
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_1_0
+Value=0;Fruit Juice
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_2_0
+Value=1;Coffee
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_3_0
+Value=9;Tea Bags
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_4_0
+Value=0;Country Milk
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_5_0
+Value=0;Mineral Water (bottle)
+Value=1;Mineral Water (Sachet)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS1_2_6_0
+Value=0;Softdrinks
+Value=1;Malt Drinks
+Value=2;Energy Drink
+Value=3;Non-Acoholic Champagne
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_1_1_0
+Value=1;Akpeteshie
+Value=2;Bitters
+Value=3;Spirits (Other)
+Value=4;Spirits-Gin
+Value=5;Spirits-Whisky
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_1_2_1
+Value=1;Imported Wine
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_1_3_0
+Value=1;National Beer (Star/Club)
+Value=2;Dark Beer
+Value=3;Beer (Imported)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_1_9_0
+Value=1;Traditinal Beer (Pito)
+Value=2;Palm Wine
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_3_0_1
+Value=1;Cigarette
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS2_4_0_0
+Value=1;Kola Nuts
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_1_0
+Value=1;Clothing Materials (Local)
+Value=2;Clothing Materials (Imported)
+Value=3;Kente
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_2_1
+Value=1;Men'S (T-Shirt)
+Value=2;Boy'S  Shirt, Short/Long  Sleeves
+Value=3;Ready Made Clothing For Men(Jeans/khaki)
+Value=4;Ready Made Clothing For Men(Trousers)
+Value=5;Ready Made Clothing For Boys
+Value=6;Underwear (Men/Boy)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_2_2
+Value=1;Women'S Blouse
+Value=2;Girl'S Dress
+Value=3;Girl Underpants
+Value=4;Women -Jeans Shorts
+Value=5;Skirt And Blouse
+Value=6;Women'S Summer Pants(Trousers)
+Value=7;African Wear for Women
+Value=8;Underwear Women
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_2_3
+Value=1;Children's Wear
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_2_4
+Value=1;School Uniforms For Boys
+Value=2;School Uniforms For Girls
+Value=3;Sports Clothes
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_3_1
+Value=1;Smock
+Value=2;Handkerchief (Women)
+Value=3;Men's Belt
+Value=4;Polyester Tie
+Value=5;Other articles of Clothing (Hankerchief, hair scaff etc)
+Value=6;Men's Socks
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_4_1
+Value=1;Dry Cleaning
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_1_4_2
+Value=1;Tailoring Charges (Woman)
+Value=2;Tailoring Charges  (Men)
+Value=3;Tailoring Charges (Children)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_2_1_1
+Value=1;Footwear Men
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_2_1_2
+Value=1;Footwear Women
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_2_1_3
+Value=1;Footwear Children
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS3_2_2_0
+Value=2;Repairs Of Footwear
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_1_1_0
+Value=1;Payment For Rents
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_3_1_1
+Value=1;Roofing Sheets
+Value=2;Iron Rods
+Value=3;Cement(Minor Repairs)
+Value=4;Cement Blocks
+Value=5;Paints
+Value=6;Windows/Doors
+Value=7;Wood
+Value=8;Other materials for maintenance
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_3_2_0
+Value=1;Labour for maintenance
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_4_1_1
+Value=1;Water Supply
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_4_1_2
+Value=1;Re-Sold Tap Water In Buckets/Barrels/Jerrycans
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_4_2_0
+Value=1;Refuse Disposal
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_4_3_1
+Value=1;Sewage Collection
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_4_3_2
+Value=1;Public Toilets Fees
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_5_1_0
+Value=1;Electricity
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_5_2_2
+Value=1;Gas
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_5_3_0
+Value=1;Liquid Fuel
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_5_4_2
+Value=1;Solid Fuels (firewood)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS4_5_4_3
+Value=1;Charcoal
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_1_1_1
+Value=1;Foam Mattress
+Value=2;Bedsteads
+Value=3;Other Furniture & Furnishing Items
+Value=4;Two Doors Wardrobe
+Value=5;Chest Of Drawers
+Value=6;Chair
+Value=7;Table
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_1_1_4
+Value=1;Wall Clocks
+Value=2;Polypropylene Carpet
+Value=3;Wollen Carpets
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_1_2_0
+Value=1;Repairs Of Tables And Chairs
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_2_1_2
+Value=1;Other Household Textiles
+Value=2;Curtain Material
+Value=3;Bedsheet
+Value=4;Blanket
+Value=5;Towels
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_1_1
+Value=1;Gas Stove
+Value=2;Refregerators And Freezers
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_1_2
+Value=1;Washing Machines
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_1_3
+Value=1;Air Conditioners
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_1_4
+Value=4;Broom
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_1_9
+Value=1;Electric Sewing Machine
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_2_1
+Value=1;Rice Cooker
+Value=2;Toaster
+Value=3;Blender
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_2_2
+Value=1;Electric Kettle
+Value=3;Other Small Electric Household Appliances
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_3_2_9
+Value=1;Dry Electric Iron
+Value=2;Pedestal Fan
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_4_0_1
+Value=1;Cups/Jag/Mug
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_4_0_2
+Value=1;Plates
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_4_0_3
+Value=1;Aluminium Cooking Utensils
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_5_1_0
+Value=1;Motorised tools and equipment
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_5_2_1
+Value=1;Vacuum Cleaner
+Value=2;Mop & Handle
+Value=3;Bucket
+Value=4;Cutlasses
+Value=5;Shovel(Metal)
+Value=6;Rake
+Value=7;Wheelbarrow
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_5_2_2
+Value=1;Other Lighting Products
+Value=2;Light Bulbs
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_6_1_1
+Value=1;Disinfectants
+Value=2;Bleaches
+Value=3;Washing Powder
+Value=4;Washing Soap
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_6_1_9
+Value=1;Insecticides Sprays
+Value=2;Matches
+Value=3;Other Non-Durable Goods
+Value=4;Shoe Polish
+Value=5;Candle
+Value=6;Insecticides Coil
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS5_6_2_1
+Value=1;Domestic Services And Household Services
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_1_1_1
+Value=1;Antibiotic
+Value=2;Anti-Malaria
+Value=3;Pain Killers
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_1_1_2
+Value=1;Traditinal Ghanaian Drugs
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_1_2_1
+Value=1;Other Medical Products
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_1_2_2
+Value=1;Contraceptive
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_1_3_1
+Value=1;Eye Specialist
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_2_2_1
+Value=1;Cost Of Public Dental Services
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_2_3_1
+Value=1;Doctors Consulting Fee
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_3_1_0
+Value=1;Hospital Services (Bed Occupancy)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS6_4_1_0
+Value=1;Laboratory Test
+Value=2;X-Rays
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_1_1_1
+Value=1;New Car
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_1_1_2
+Value=1;Second-Hand Car
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_1_2_0
+Value=1;Purchase Of New and Second-hand Motor Cycles
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_1_3_0
+Value=1;Purchase Of New Bicycles
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_1_1
+Value=1;Purchase Of Tyre
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_1_2
+Value=1;Car Battery
+Value=2;Spark Plug
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_2_1
+Value=1;Diesel
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_2_2
+Value=1;Petrol
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_2_4
+Value=1;Lubricants
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_3_0
+Value=1;Motor Maintenance, Repair And Other Service Charges
+Value=4;Parking Space and other Services
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_2_4_3
+Value=1;Driver's Lesson Fees
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_3_2_1
+Value=2;Bus Fares & Trotro fairs
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_3_2_2
+Value=1;Taxi Fares
+Value=2;Car Hire
+Value=2;Car Hiring
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_3_3_1
+Value=1;Cost Of Travel By Air
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_3_4_0
+Value=1;Cost Of Travel By Ferries And Canoes
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_4_1_1
+Value=1;Postal Services
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS7_4_1_2
+Value=1;Cost Of Luggage And Items Transported Unaccompanied
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_1_1_0
+Value=1;Telephones Handset
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_1_3_1
+Value=1;Personal Computers (desktop and notebook)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_1_3_2
+Value=1;Other electronic information processing products
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_1_4_0
+Value=1;Radio sets, Dvd Players, etc
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_3_2_0
+Value=1;Prepaid Phone Card (incl SMS and data bundels)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_3_3_0
+Value=1;Other Communication Charges (internet)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_3_5_0
+Value=1;Repair Of Handset, Mobile Phones And Fax Machines
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_2_2_2
+Value=1;Equipment For Sport, Camping And Open-Air Recreation
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_3_1_2
+Value=1;Gardens, Plants And Flowers
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_3_2_2
+Value=2;Pets And Related Products
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_4_6_3
+Value=1;Games Of Chance
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_6_1_0
+Value=1;Cinema/Cultural Services
+Value=2;Musical Instrument,
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_7_1_1
+Value=1;English Textbook
+Value=2;Mathematical TextBook
+Value=3;Dictionary
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_7_2_1
+Value=1;Newspapers And Periodicals
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS9_7_4_0
+Value=1;Stationery And Drawing Materials
+Value=2;Other Stationary Materials
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS10_1_0_2
+Value=1;Pre-Primary And Primary Education
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS10_2_0_0
+Value=1;Public/Private Secondary School Fees (SSS)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS10_3_0_0
+Value=1;Post-Secondary Non-Tertiary Education
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS10_4_0_0
+Value=1;University Fees
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS10_5_0_9
+Value=1;Education Not Definable By Level
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS11_1_1_1
+Value=2;Restaurants, Cafes And The Like
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS11_2_0_3
+Value=1;Accommodation (Hotel)
+Value=2;Hostel Dormitory Accomodation
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS12_1_1_0
+Value=1;Life Insurance
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS12_1_2_0
+Value=1;Insurance Connected With Health
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS12_1_4_0
+Value=1;Insurance Connected With Transport
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS12_2_9_9
+Value=1;Other Financial Services (including Mobile Money)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_1_1_1
+Value=1;Electric Appliances For Personal Care
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_1_2_0
+Value=0;Toilet Rolls
+Value=1;Sanitary Pad (Tampon)
+Value=2;Baby Diapers And Wipes
+Value=3;Bathing/Toilet Soap
+Value=4;Skin Powder (Talcum)
+Value=5;Disposable Razor
+Value=6;Body Lotion/Cream
+Value=7;Deodorant
+Value=8;Toothpaste
+Value=9;Leather Wallet
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_1_3_1
+Value=1;Lady Hairdressing
+Value=2;Men'S Haircut
+Value=3;Mesh (Human/Synthetic)
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_2_1_1
+Value=1;Jewellery
+Value=2;Watches
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_2_2_0
+Value=1;Printing of Picture
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_2_9_1
+Value=2;Other Personal Effects
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS13_9_0_9
+Value=2;Other Services n.e.c.
+
+[ValueSet]
+Label=CC6nom
+Name=CC6NOM_VS8_1_2_0
+Value=1;Mobile Phones
+
+[Item]
+Label=Coicop06
+Name=COICOP06
+Start=40
+Len=10
+DataType=Alpha
+
+[Record]
+Label=Products
+Name=PRODUCTS
+RecordTypeValue='4'
+RecordLen=450
+
+[Item]
+Label=Brand
+Name=BRAND
+Start=10
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Item_Description
+Name=ITEM_DESCRIPTION
+Start=210
+Len=200
+DataType=Alpha
+
+[Item]
+Label=Price
+Name=PRICE
+Start=410
+Len=15
+
+[Item]
+Label=Quantity
+Name=QUANTITY
+Start=425
+Len=15
+
+[Item]
+Label=Imp_Local
+Name=IMP_LOCAL
+Start=440
+Len=1
+
+[ValueSet]
+Label=Imp_Local
+Name=IMP_LOCAL_VS1
+Value=1;Imported
+Value=2;Local
+
+[Item]
+Label=Unit of Measurement
+Name=UNIT_OF_MEASUREMENT
+Start=441
+Len=10
+DataType=Alpha
+
+[Record]
+Label=User
+Name=USER
+RecordTypeValue='5'
+RecordLen=55
+
+[Item]
+Label=User ID
+Name=USER_ID
+Start=10
+Len=10
+DataType=Alpha
+
+[Item]
+Label=Time
+Name=TIME
+Start=20
+Len=15
+DataType=Alpha
+
+[Item]
+Label=Gps_Location
+Name=GPS_LOC
+Start=35
+Len=21
+DataType=Alpha
