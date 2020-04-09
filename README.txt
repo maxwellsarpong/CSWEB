@@ -1,4 +1,4 @@
-This file defines the CAPI DATA for CSWeb data collection
+This file defines the CAPI DATA for CSWeb App data collection
 
  REGION
      1. Western Region
